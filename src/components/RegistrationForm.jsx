@@ -176,13 +176,13 @@ const RegistrationForm = () => {
 
   return (
     <div className="installer-card-container" style={{ margin: 'auto', padding: '2rem 1rem' }}>
-      <div className="installer-card glass" style={{ padding: '2.5rem 2rem', borderRadius: '24px', width: '100%' }}>
+      <div className="installer-card glass">
         <div className="app-logo-wrapper" style={{ margin: '0 auto 2rem' }}>
           <img src="/icon-512.png" alt="Aegis Pets SOS Logo" className="app-logo-img" />
         </div>
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-          <h2 className="app-title" style={{ fontSize: '1.75rem', margin: 0 }}>
+        <div className="form-header">
+          <h2 className="app-title">
             Emergency Registration
           </h2>
           <button type="button" onClick={fillTestData} style={{
