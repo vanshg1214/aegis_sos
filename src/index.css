@@ -1,0 +1,746 @@
+/* ==========================================
+   AEGIS PETS SOS - Premium PWA Installer Style
+   Theme: Exact Match to Screenshot (Warm Dark Centered Layout)
+   ========================================== */
+
+:root {
+  --bg-primary: #000000;
+  --bg-bottom-bar: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #9c9a96;
+  --text-muted: #585755;
+  
+  --accent-gold: #eab308;
+  --accent-gold-hover: #fbbf24;
+  --accent-success: #10b981;
+  
+  --border-subtle: 1px solid #1f1e1c;
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 1.5;
+}
+
+/* Typography settings */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* Utilities */
+.hidden {
+  display: none !important;
+}
+
+.glass {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--border-subtle);
+}
+
+/* ==================== BROWSER INSTALLER VIEW ==================== */
+#browser-installer-view {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  /* Dark brown/orange radial glow at the top, fading to pitch black at the bottom */
+  background: radial-gradient(ellipse 65% 55% at 50% -5%, #23160a 0%, #000000 75%);
+  padding: 3rem 1.5rem;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+/* Centered Installer Card Container */
+.installer-card-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 40px; 
+}
+
+/* Main Centered Installer Layout */
+.installer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* App Logo: Rounded rectangle icon container with black background and soft glow */
+.app-logo-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 2rem;
+  border-radius: 28px;
+  overflow: hidden;
+  background-color: #000000;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 35px rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* App Title */
+.app-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* App Description */
+.app-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 420px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Install Action button wrapper */
+.install-action-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Primary Button Styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Center main button: Modern Gold Gradient */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), #d97706);
+  color: #000000;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 325px;
+  height: 56px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 0 24px !important;
+  position: relative !important;
+}
+
+.btn-primary i {
+  display: inline-block !important;
+  font-size: 1.25rem !important;
+  transition: transform 0.3s ease !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  float: none !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-gold-hover), #f59e0b);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(234, 179, 8, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover i {
+  transform: translateY(2px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite !important;
+  display: inline-block !important;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: var(--border-subtle);
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 0.85rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Bottom banner gold install button */
+.btn-gold-small {
+  background-color: var(--accent-gold);
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 1.25rem;
+  border-radius: 8px; /* Matching rounded corners */
+}
+
+.btn-gold-small:hover {
+  background-color: var(--accent-gold-hover);
+}
+
+/* Success Installed View */
+.downloaded-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.success-icon-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid var(--accent-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-success);
+  font-size: 1.5rem;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.success-text-group h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.success-text-group p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+
+.animate-scale {
+  animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ==================== BOTTOM INSTALLATION BAR ==================== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-bottom-bar);
+  border-top: var(--border-subtle);
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.bottom-bar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.bottom-bar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bottom-bar-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.bottom-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem;
+  transition: color 0.2s;
+}
+
+.btn-text:hover {
+  color: var(--text-primary);
+}
+
+/* ==================== MODAL WINDOWS ==================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Mobile Bottom Sheet */
+}
+
+@media(min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+  }
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 24px 24px 0 0;
+  padding: 2rem;
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.7);
+  border-bottom: none;
+}
+
+@media(min-width: 768px) {
+  .modal-card {
+    border-radius: 20px;
+    border-bottom: var(--border-subtle);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.modal-header h3 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-header h3 i {
+  color: var(--accent-gold);
+}
+
+.close-modal {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-modal:hover {
+  color: var(--text-primary);
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* iOS instructions */
+.ios-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ios-step {
+  display: flex;
+  gap: 1rem;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.step-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.step-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.share-icon-placeholder, .add-icon-placeholder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  color: #007AFF;
+}
+
+.share-icon-placeholder-ios {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 16px;
+  height: 20px;
+}
+
+.modal-footer {
+  margin-top: 2rem;
+}
+
+/* QR Code */
+.desktop-qr-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.qr-code-container {
+  padding: 1.25rem;
+  background: white;
+  border-radius: 16px;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.qr-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.qr-link {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+}
+
+/* Animations */
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(120px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==================== STANDALONE APP WRAPPER ==================== */
+#pwa-standalone-view {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+#target-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Splash Loading Screen */
+#splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0908;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#splash-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.03);
+}
+
+.splash-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.splash-logo-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 25px rgba(234, 179, 8, 0.15);
+  animation: logo-pulsate 2s infinite ease-in-out;
+}
+
+@keyframes logo-pulsate {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(234, 179, 8, 0.2)); }
+  50% { transform: scale(1.03); filter: drop-shadow(0 0 15px rgba(234, 179, 8, 0.4)); }
+}
+
+.splash-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.loading-bar-outer {
+  width: 140px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading-bar-inner {
+  height: 100%;
+  width: 0;
+  background: var(--accent-gold);
+  border-radius: 10px;
+  animation: initial-load 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes initial-load {
+  0% { width: 0; }
+  10% { width: 10%; }
+  60% { width: 65%; }
+  90% { width: 92%; }
+  100% { width: 100%; }
+}
+
+.splash-status {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Offline Screen */
+#offline-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 15;
+  padding: 2rem;
+  text-align: center;
+}
+
+.offline-icon {
+  font-size: 3.5rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Scaling */
+@media(max-width: 480px) {
+  #browser-installer-view {
+    padding: 1.5rem;
+    background: radial-gradient(ellipse 90% 60% at 50% -5%, #25180c 0%, #000000 80%);
+  }
+  
+  .installer-card-container {
+    margin-bottom: 60px;
+  }
+  
+  .app-logo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    border-radius: 26px;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .app-description {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-primary {
+    max-width: 100%;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .bottom-bar {
+    padding: 1rem 1.25rem;
+  }
+  
+  .bottom-bar-right {
+    gap: 1rem;
+  }
+}
+
+/* ==================== FORM STYLES ==================== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-left: 0.25rem;
+}
+
+.form-input {
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  margin-left: 0.25rem;
+}
+
