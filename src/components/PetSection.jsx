@@ -36,7 +36,7 @@ const PetSection = ({ register, control, errors }) => {
             {errors?.pets?.[index]?.name && <span className="error-text">{errors.pets[index].name.message}</span>}
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem' }}>
+          <div className="responsive-row">
             <div className="input-group" style={{ flex: 1 }}>
               <label>Breed</label>
               <input 
@@ -72,7 +72,7 @@ const PetSection = ({ register, control, errors }) => {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem' }}>
+          <div className="responsive-row">
             <div className="input-group" style={{ flex: 1 }}>
               <label>Age</label>
               <input 

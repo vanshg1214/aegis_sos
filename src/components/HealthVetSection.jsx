@@ -89,7 +89,7 @@ const HealthVetSection = ({ register, errors }) => {
         {errors?.vetPhone && <span className="error-text">{errors.vetPhone.message}</span>}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <div className="responsive-row">
         <div className="input-group" style={{ flex: 1 }}>
           <label>Date of Last Visit</label>
           <input 

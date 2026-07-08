@@ -738,9 +738,21 @@ h1, h2, h3, h4 {
 }
 
 .error-text {
-  color: #ef4444;
+  color: #ff6b6b;
   font-size: 0.85rem;
-  margin-top: 0.1rem;
-  margin-left: 0.25rem;
+  margin-top: 0.3rem;
+  display: block;
 }
 
+/* Responsive Form Rows */
+.responsive-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .responsive-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

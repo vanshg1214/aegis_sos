@@ -36,7 +36,7 @@ const OwnerSection = ({ register, errors }) => {
         {errors.ownerPhone && <span className="error-text">{errors.ownerPhone.message}</span>}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <div className="responsive-row">
         <div className="input-group" style={{ flex: 1 }}>
           <label>Email Address</label>
           <input 
