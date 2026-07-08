@@ -62,7 +62,6 @@ const PetSection = ({ register, control, errors }) => {
               <select 
                 {...register(`pets.${index}.gender`, { required: "Gender is required" })}
                 className="form-input"
-                style={{ appearance: 'none', backgroundColor: 'rgba(0,0,0,0.2)' }}
               >
                 <option value="">Select...</option>
                 <option value="M">Male (M)</option>
