@@ -195,6 +195,43 @@ const RegistrationForm = () => {
             <i className="fa-solid fa-flask"></i> Fill Data
           </button>
         </div>
+
+        {currentStep === 1 && (
+          <div style={{
+            background: 'rgba(234, 179, 8, 0.05)',
+            border: '1px solid rgba(234, 179, 8, 0.15)',
+            borderRadius: '16px',
+            padding: '1.25rem',
+            textAlign: 'left',
+            width: '100%',
+            marginBottom: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.6rem',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{
+                background: 'var(--accent-gold)',
+                color: '#000000',
+                fontSize: '0.75rem',
+                fontWeight: '800',
+                textTransform: 'uppercase',
+                padding: '0.2rem 0.6rem',
+                borderRadius: '999px',
+                letterSpacing: '0.05em'
+              }}>
+                Action Required
+              </span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', fontWeight: '600' }}>
+                Why is this important?
+              </span>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
+              This secure registry creates your pet's <strong>emergency medical file</strong>. Completing this is critical—in a veterinary crisis, every second counts. Pre-saving your contact, pet health history, and veterinarian details enables instant first-aid guidance, automated clinic notification, and one-tap emergency transport request once the app is installed.
+            </p>
+          </div>
+        )}
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '2.5rem' }}>
           <div style={{ width: '45%', height: '4px', background: currentStep >= 1 ? 'var(--accent-gold)' : 'rgba(255,255,255,0.1)', borderRadius: '4px', transition: 'background 0.3s' }}></div>
