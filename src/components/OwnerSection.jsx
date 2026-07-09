@@ -26,6 +26,17 @@ const OwnerSection = ({ register, errors }) => {
       </div>
 
       <div className="input-group">
+        <label>Neighborhood (Barrio)</label>
+        <input 
+          type="text" 
+          placeholder="e.g. Downtown"
+          {...register("ownerBarrio", { required: "Neighborhood is required" })}
+          className="form-input"
+        />
+        {errors.ownerBarrio && <span className="error-text">{errors.ownerBarrio.message}</span>}
+      </div>
+
+      <div className="input-group">
         <label>Mobile Phone Number</label>
         <input 
           type="tel" 

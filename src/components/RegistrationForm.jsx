@@ -22,6 +22,7 @@ const RegistrationForm = () => {
     // Step 1
     setValue('ownerName', 'Jane Doe');
     setValue('ownerAddress', '123 Fake Street, Springfield, IL 62701');
+    setValue('ownerBarrio', 'Downtown');
     setValue('ownerPhone', '(555) 019-2834');
     setValue('ownerEmail', 'jane.doe@example.com');
     setValue('ownerWhatsapp', '(555) 019-2834');
@@ -75,6 +76,7 @@ const RegistrationForm = () => {
         const flattenedData = {
           ownerName: data.ownerName,
           ownerAddress: data.ownerAddress,
+          ownerBarrio: data.ownerBarrio,
           ownerPhone: data.ownerPhone,
           ownerEmail: data.ownerEmail,
           ownerWhatsapp: data.ownerWhatsapp,
@@ -158,7 +160,7 @@ const RegistrationForm = () => {
   const nextStep = async () => {
     let isValid = false;
     if (currentStep === 1) {
-      isValid = await trigger(['ownerName', 'ownerAddress', 'ownerPhone', 'ownerEmail', 'ownerWhatsapp', 'pets']);
+      isValid = await trigger(['ownerName', 'ownerAddress', 'ownerBarrio', 'ownerPhone', 'ownerEmail', 'ownerWhatsapp', 'pets']);
     }
     
     if (isValid) {
