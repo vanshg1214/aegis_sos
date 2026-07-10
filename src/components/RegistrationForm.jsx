@@ -109,7 +109,7 @@ const RegistrationForm = () => {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/plain;charset=utf-8',
           },
           body: JSON.stringify(flattenedData)
         });
@@ -247,19 +247,19 @@ const RegistrationForm = () => {
           )}
           {currentStep === 2 && <HealthVetSection register={register} errors={errors} />}
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
+          <div className="form-footer">
             {currentStep > 1 && (
-              <button type="button" onClick={prevStep} className="btn btn-outline" style={{ padding: '0.75rem 1.5rem' }}>
+              <button type="button" onClick={prevStep} className="btn btn-outline">
                 <i className="fa-solid fa-arrow-left"></i> Atrás
               </button>
             )}
             
             {currentStep < 2 ? (
-              <button type="button" onClick={nextStep} className="btn btn-primary" style={{ marginLeft: 'auto', width: 'auto', padding: '0.75rem 2.5rem' }}>
+              <button type="button" onClick={nextStep} className="btn btn-primary">
                 Siguiente <i className="fa-solid fa-arrow-right"></i>
               </button>
             ) : (
-              <button type="submit" disabled={isSubmitting} className={`btn btn-primary ${!isSubmitting ? 'animate-bounce' : ''}`} style={{ marginLeft: 'auto', width: 'auto', padding: '0.75rem 2.5rem', opacity: isSubmitting ? 0.7 : 1 }}>
+              <button type="submit" disabled={isSubmitting} className={`btn btn-primary ${!isSubmitting ? 'animate-bounce' : ''}`} style={{ opacity: isSubmitting ? 0.7 : 1 }}>
                 {isSubmitting ? (
                   <><i className="fa-solid fa-spinner fa-spin"></i> Guardando...</>
                 ) : (
@@ -287,7 +287,7 @@ const RegistrationForm = () => {
             </p>
             <button 
               className="btn btn-primary" 
-              style={{ width: '100%', padding: '0.8rem' }}
+              style={{ margin: '0 auto' }}
               onClick={() => setInstallMessage(null)}
             >
               ¡Entendido!
