@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import OwnerSection from './OwnerSection';
 import PetSection from './PetSection';
 import HealthVetSection from './HealthVetSection';
@@ -19,35 +19,35 @@ const RegistrationForm = () => {
   });
 
   const fillTestData = () => {
-    // Step 1
+    // Paso 1
     setValue('ownerName', 'Jane Doe');
-    setValue('ownerAddress', '123 Fake Street, Springfield, IL 62701');
-    setValue('ownerBarrio', 'Downtown');
-    setValue('ownerPhone', '(555) 019-2834');
+    setValue('ownerAddress', 'Calle Ficticia 123, Manga, Cartagena');
+    setValue('ownerBarrio', 'Manga');
+    setValue('ownerPhone', '3001234567');
     setValue('ownerEmail', 'jane.doe@example.com');
-    setValue('ownerWhatsapp', '(555) 019-2834');
+    setValue('ownerWhatsapp', '3001234567');
     
-    // Step 1
+    // Paso 1: Mascotas
     setValue('pets', [{
       name: 'Buddy',
       breed: 'Golden Retriever',
-      weight: '45 lbs',
+      weight: '20 kg',
       gender: 'M',
-      age: '3',
+      age: '3 años',
       dob: '2023-05-12'
     }]);
 
-    // Step 2
+    // Paso 2
     setValue('foodBrand', 'Purina Pro Plan');
-    setValue('foodLocation', 'PetSmart');
-    setValue('healthIssues', 'None');
-    setValue('medications', 'Heartgard once a month');
+    setValue('foodLocation', 'Éxito, Amazon');
+    setValue('healthIssues', 'Ninguno');
+    setValue('medications', 'Heartgard una vez al mes');
     setValue('vetName', 'Dr. Smith');
-    setValue('vetAddress', '456 Vet Clinic Rd');
-    setValue('vetPhone', '(555) 999-8888');
+    setValue('vetAddress', 'Av. Principal 456, Cartagena');
+    setValue('vetPhone', '3109998888');
     setValue('lastVisitDate', '2026-02-15');
-    setValue('lastVisitReason', 'Annual checkup');
-    setValue('authorizeRecords', true);
+    setValue('lastVisitReason', 'Chequeo anual');
+    setValue('authRecords', true);
   };
 
   useEffect(() => {
@@ -140,18 +140,18 @@ const RegistrationForm = () => {
       
       if (isIOS) {
         setInstallMessage({
-          title: "App Status",
-          desc: "Aegis Pets SOS may already be installed on your home screen! If not, tap the Share icon at the bottom of your browser, then select 'Add to Home Screen'."
+          title: "Estado de la App",
+          desc: "¡Es posible que Aegis Pets SOS ya esté instalada en su pantalla de inicio! Si no es así, toque el icono Compartir en la parte inferior de su navegador, luego seleccione 'Agregar a la pantalla de inicio'."
         });
       } else if (isMac || /windows|linux/.test(userAgent)) {
         setInstallMessage({
-          title: "App Already Installed!",
-          desc: "It looks like Aegis Pets SOS is already installed on your device. You can open it directly from your desktop, start menu, or by clicking the 'Open in App' icon in your browser's address bar."
+          title: "¡Aplicación ya instalada!",
+          desc: "Parece que Aegis Pets SOS ya está instalada en su dispositivo. Puede abrirla directamente desde su escritorio, menú de inicio o haciendo clic en el icono 'Abrir en la aplicación' en la barra de direcciones de su navegador."
         });
       } else {
         setInstallMessage({
-          title: "App Already Installed!",
-          desc: "Aegis Pets SOS is likely already installed on your device. Check your app drawer or home screen to open it."
+          title: "¡Aplicación ya instalada!",
+          desc: "Es probable que Aegis Pets SOS ya esté instalada en su dispositivo. Revise su menú de aplicaciones o pantalla de inicio para abrirla."
         });
       }
     }
@@ -185,14 +185,14 @@ const RegistrationForm = () => {
         
         <div className="form-header">
           <h2 className="app-title">
-            Emergency Registration
+            Registro de Emergencia
           </h2>
           <button type="button" onClick={fillTestData} style={{
             background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
             color: 'var(--text-secondary)', padding: '0.4rem 0.8rem', borderRadius: '8px',
             fontSize: '0.8rem', cursor: 'pointer', transition: 'all 0.2s'
           }}>
-            <i className="fa-solid fa-flask"></i> Fill Data
+            <i className="fa-solid fa-flask"></i> Llenar Datos
           </button>
         </div>
 
@@ -221,14 +221,14 @@ const RegistrationForm = () => {
                 borderRadius: '999px',
                 letterSpacing: '0.05em'
               }}>
-                Action Required
+                Acción Requerida
               </span>
               <span style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', fontWeight: '600' }}>
-                Why is this important?
+                ¿Por qué es esto importante?
               </span>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
-              This secure registry creates your pet's <strong>emergency medical file</strong>. Completing this is critical. In a veterinary crisis, every second counts. Pre-saving your contact, pet health history, and veterinarian details enables instant first-aid guidance, automated clinic notification, and one-tap emergency transport request once the app is installed.
+              Este registro seguro crea la <strong>ficha médica de emergencia</strong> de su mascota. Completarlo es fundamental. En una crisis veterinaria, cada segundo cuenta. Guardar previamente sus datos de contacto, historial de salud de la mascota y detalles del veterinario permite obtener orientación de primeros auxilios al instante, notificaciones automáticas a las clínicas y solicitudes de transporte de emergencia con un solo toque una vez que la aplicación esté instalada.
             </p>
           </div>
         )}
@@ -250,20 +250,20 @@ const RegistrationForm = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
             {currentStep > 1 && (
               <button type="button" onClick={prevStep} className="btn btn-outline" style={{ padding: '0.75rem 1.5rem' }}>
-                <i className="fa-solid fa-arrow-left"></i> Back
+                <i className="fa-solid fa-arrow-left"></i> Atrás
               </button>
             )}
             
             {currentStep < 2 ? (
               <button type="button" onClick={nextStep} className="btn btn-primary" style={{ marginLeft: 'auto', width: 'auto', padding: '0.75rem 2.5rem' }}>
-                Next <i className="fa-solid fa-arrow-right"></i>
+                Siguiente <i className="fa-solid fa-arrow-right"></i>
               </button>
             ) : (
               <button type="submit" disabled={isSubmitting} className={`btn btn-primary ${!isSubmitting ? 'animate-bounce' : ''}`} style={{ marginLeft: 'auto', width: 'auto', padding: '0.75rem 2.5rem', opacity: isSubmitting ? 0.7 : 1 }}>
                 {isSubmitting ? (
-                  <><i className="fa-solid fa-spinner fa-spin"></i> Saving...</>
+                  <><i className="fa-solid fa-spinner fa-spin"></i> Guardando...</>
                 ) : (
-                  <><i className="fa-solid fa-download"></i> Download App</>
+                  <><i className="fa-solid fa-download"></i> Descargar App</>
                 )}
               </button>
             )}
@@ -290,7 +290,7 @@ const RegistrationForm = () => {
               style={{ width: '100%', padding: '0.8rem' }}
               onClick={() => setInstallMessage(null)}
             >
-              Got it!
+              ¡Entendido!
             </button>
           </div>
         </div>

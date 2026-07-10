@@ -8,29 +8,29 @@ const PetSection = ({ register, control, errors }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left', marginTop: '1.5rem' }}>
-      <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--accent-gold)' }}>Pet Information</h3>
+      <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--accent-gold)' }}>Información de la Mascota</h3>
       
       {fields.map((field, index) => (
         <div key={field.id} style={{ padding: '1rem', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', marginBottom: '1rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <h4 style={{ margin: 0 }}>Pet {index + 1}</h4>
+            <h4 style={{ margin: 0 }}>Mascota {index + 1}</h4>
             {index > 0 && (
               <button 
                 type="button" 
                 onClick={() => remove(index)}
                 style={{ background: 'transparent', color: '#ff4444', border: 'none', cursor: 'pointer' }}
               >
-                Remove
+                Eliminar
               </button>
             )}
           </div>
 
           <div className="input-group">
-            <label>Pet's Name</label>
+            <label>Nombre de la Mascota</label>
             <input 
               type="text" 
-              placeholder="e.g. Buddy"
-              {...register(`pets.${index}.name`, { required: "Pet name is required" })}
+              placeholder="ej. Buddy"
+              {...register(`pets.${index}.name`, { required: "El nombre de la mascota es obligatorio" })}
               className="form-input"
             />
             {errors?.pets?.[index]?.name && <span className="error-text">{errors.pets[index].name.message}</span>}
@@ -38,34 +38,34 @@ const PetSection = ({ register, control, errors }) => {
 
           <div className="responsive-row">
             <div className="input-group" style={{ flex: 1 }}>
-              <label>Breed</label>
+              <label>Raza</label>
               <input 
                 type="text" 
-                placeholder="e.g. Golden Retriever"
-                {...register(`pets.${index}.breed`, { required: "Breed is required" })}
+                placeholder="ej. Golden Retriever"
+                {...register(`pets.${index}.breed`, { required: "La raza es obligatoria" })}
                 className="form-input"
               />
               {errors?.pets?.[index]?.breed && <span className="error-text">{errors.pets[index].breed.message}</span>}
             </div>
             <div className="input-group" style={{ flex: 1 }}>
-              <label>Weight</label>
+              <label>Peso</label>
               <input 
                 type="text" 
-                placeholder="e.g. 15 kg"
-                {...register(`pets.${index}.weight`, { required: "Weight is required" })}
+                placeholder="ej. 15 kg"
+                {...register(`pets.${index}.weight`, { required: "El peso es obligatorio" })}
                 className="form-input"
               />
               {errors?.pets?.[index]?.weight && <span className="error-text">{errors.pets[index].weight.message}</span>}
             </div>
             <div className="input-group" style={{ flex: 1 }}>
-              <label>Gender (M/F)</label>
+              <label>Género (M/F)</label>
               <select 
-                {...register(`pets.${index}.gender`, { required: "Gender is required" })}
+                {...register(`pets.${index}.gender`, { required: "El género es obligatorio" })}
                 className="form-input"
               >
-                <option value="">Select...</option>
-                <option value="M">Male (M)</option>
-                <option value="F">Female (F)</option>
+                <option value="">Seleccionar...</option>
+                <option value="M">Macho (M)</option>
+                <option value="F">Hembra (F)</option>
               </select>
               {errors?.pets?.[index]?.gender && <span className="error-text">{errors.pets[index].gender.message}</span>}
             </div>
@@ -73,20 +73,20 @@ const PetSection = ({ register, control, errors }) => {
 
           <div className="responsive-row">
             <div className="input-group" style={{ flex: 1 }}>
-              <label>Age</label>
+              <label>Edad</label>
               <input 
                 type="text" 
-                placeholder="e.g. 3 years"
-                {...register(`pets.${index}.age`, { required: "Age is required" })}
+                placeholder="ej. 3 años"
+                {...register(`pets.${index}.age`, { required: "La edad es obligatoria" })}
                 className="form-input"
               />
               {errors?.pets?.[index]?.age && <span className="error-text">{errors.pets[index].age.message}</span>}
             </div>
             <div className="input-group" style={{ flex: 1 }}>
-              <label>Date of Birth</label>
+              <label>Fecha de Nacimiento</label>
               <input 
                 type="date" 
-                {...register(`pets.${index}.dob`, { required: "Date of Birth is required" })}
+                {...register(`pets.${index}.dob`, { required: "La fecha de nacimiento es obligatoria" })}
                 className="form-input"
               />
               {errors?.pets?.[index]?.dob && <span className="error-text">{errors.pets[index].dob.message}</span>}
@@ -101,7 +101,7 @@ const PetSection = ({ register, control, errors }) => {
         className="btn btn-outline btn-small"
         style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}
       >
-        + Add Another Pet
+        + Añadir Otra Mascota
       </button>
     </div>
   );
