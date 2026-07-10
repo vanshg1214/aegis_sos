@@ -228,7 +228,7 @@ const RegistrationForm = () => {
               </span>
             </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
-              This secure registry creates your pet's <strong>emergency medical file</strong>. Completing this is critical—in a veterinary crisis, every second counts. Pre-saving your contact, pet health history, and veterinarian details enables instant first-aid guidance, automated clinic notification, and one-tap emergency transport request once the app is installed.
+              This secure registry creates your pet's <strong>emergency medical file</strong>. Completing this is critical. In a veterinary crisis, every second counts. Pre-saving your contact, pet health history, and veterinarian details enables instant first-aid guidance, automated clinic notification, and one-tap emergency transport request once the app is installed.
             </p>
           </div>
         )}
