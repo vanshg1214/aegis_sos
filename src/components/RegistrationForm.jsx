@@ -18,38 +18,6 @@ const RegistrationForm = () => {
     }
   });
 
-  const fillTestData = () => {
-    // Paso 1
-    setValue('ownerName', 'Jane Doe');
-    setValue('ownerAddress', 'Calle Ficticia 123, Manga, Cartagena');
-    setValue('ownerBarrio', 'Manga');
-    setValue('ownerPhone', '3001234567');
-    setValue('ownerEmail', 'jane.doe@example.com');
-    setValue('ownerWhatsapp', '3001234567');
-    
-    // Paso 1: Mascotas
-    setValue('pets', [{
-      name: 'Buddy',
-      breed: 'Golden Retriever',
-      weight: '20 kg',
-      gender: 'M',
-      age: '3 años',
-      dob: '2023-05-12'
-    }]);
-
-    // Paso 2
-    setValue('foodBrand', 'Purina Pro Plan');
-    setValue('foodLocation', 'Éxito, Amazon');
-    setValue('healthIssues', 'Ninguno');
-    setValue('medications', 'Heartgard una vez al mes');
-    setValue('vetName', 'Dr. Smith');
-    setValue('vetAddress', 'Av. Principal 456, Cartagena');
-    setValue('vetPhone', '3109998888');
-    setValue('lastVisitDate', '2026-02-15');
-    setValue('lastVisitReason', 'Chequeo anual');
-    setValue('authRecords', true);
-  };
-
   useEffect(() => {
     // Check if it was already caught by the global handler in index.html
     if (window.deferredPrompt) {
@@ -183,17 +151,10 @@ const RegistrationForm = () => {
           <img src="/icon-512.png" alt="Aegis Pets SOS Logo" className="app-logo-img" />
         </div>
         
-        <div className="form-header">
+        <div className="form-header" style={{ justifyContent: 'center' }}>
           <h2 className="app-title">
             Registro de Emergencia
           </h2>
-          <button type="button" onClick={fillTestData} style={{
-            background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-            color: 'var(--text-secondary)', padding: '0.4rem 0.8rem', borderRadius: '8px',
-            fontSize: '0.8rem', cursor: 'pointer', transition: 'all 0.2s'
-          }}>
-            <i className="fa-solid fa-flask"></i> Llenar Datos
-          </button>
         </div>
 
         {currentStep === 1 && (
