@@ -1,6 +1,7 @@
-const CACHE_NAME = 'aegis-v6';
+const CACHE_NAME = 'aegis-v7';
 const ASSETS_TO_CACHE = [
   '/',
+  '/command-post.html',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png'

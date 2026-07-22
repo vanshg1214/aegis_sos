@@ -4,7 +4,8 @@ import './index.css'
 
 function App() {
   const [isStandalone, setIsStandalone] = useState(false)
-  const targetUrl = 'https://aegis-pets-sos.netlify.app/'
+  // Replaced the external Netlify URL with our newly integrated local page
+  const targetUrl = '/command-post.html'
 
   useEffect(() => {
     // Check if the app is running in standalone mode (PWA installed)
@@ -37,6 +38,7 @@ function App() {
     );
   }
 
+  // If opened in a regular mobile browser, still show the install page
   return (
     <div id="browser-installer-view" style={{ minHeight: '100vh', overflowY: 'auto' }}>
       <div className="ambient-glow"></div>
